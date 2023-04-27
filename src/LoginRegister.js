@@ -1,3 +1,4 @@
+import {Routes, Route, useNavigate} from 'react-router-dom';
 var testUser = "userTest";
 var testPsswrd = "000";
 
@@ -12,6 +13,8 @@ if((tmpUser.value == testUser) && (tmpPassword.value == testPsswrd))
     alert('Login Correcto');
     //alert(tmpUser.value);
     //alert(tmpPassword.value);
+    
+    //<href="/Muro.js"/>;
 }
 else
 {
@@ -22,14 +25,25 @@ else
 
 }
 
+function Muro() {
+    return <h2>Muros</h2>;
+  }
+
 
 export default function LoginRegister()
 {
+
+    const navigate = useNavigate();
+    navigate('/Muro');
 return ( 
 <>
+<Routes>
+          <Route path="/Muro" element={<Muro />} />
+</Routes>
+
 <div className="container-fluid">
         <div className="row mh-100vh">
-            <div className="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block" style={{background: "rgb(52,52,52)"}}>
+            <div className="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block" style={{background: "url(assets/img/corkboard.jpg) center center / cover"}}>
                 <div className="m-auto w-lg-75 w-xl-50" data-aos="fade-up" data-aos-delay="450" id="loginSection">
                     <div style={{textalign: "center", marginbottom: "46px"}}><a className="navbar-brand" href="index.php" style={{color: "rgb(255,255,255)", fontweight: "bold", letterspacing: "1px",borderstyle: "double"}}>&nbsp;LOG IN&nbsp;</a></div>
 
@@ -96,7 +110,7 @@ return (
                     <p className="mt-3 mb-0" onClick="showLogin()" ><a className="text-info small" href="#">¿Ya tienes cuenta? ¡Ingresa!</a></p>
                 </div>
             </div>
-            <div className="col-lg-6 d-flex align-items-end" data-aos="fade-up" data-aos-duration="450" id="bg-block" style={{background: "url(assets/img/wallpaperbetter.com_1920x10802.jpg) center center / cover"}}>
+            <div className="col-lg-6 d-flex align-items-end" data-aos="fade-up" data-aos-duration="450" id="bg-block" style={{background: "url(assets/img/blog-post-image-guide.jpg) center center / cover"}}>
             </div>
         </div>
     </div>
